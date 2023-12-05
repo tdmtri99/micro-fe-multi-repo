@@ -6,9 +6,9 @@ import { selectCounter } from '../store/count/counter.selector';
 @Component({
   selector: 'app-count',
   template: `
-    <h1>
-      count works! in remote
-    </h1>
+    <p>
+      count works!
+    </p>
 <div class="container p-5 text-center">
 
     <button class="btn btn-primary mb-3" (click)="increment()">Increment</button>

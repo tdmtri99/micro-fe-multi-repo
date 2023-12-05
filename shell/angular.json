@@ -133,7 +133,40 @@
 					}
 				}
 			}
-		}
+    },
+    "@ng-tri/shared": {
+      "projectType": "library",
+      "root": "projects/ng-tri/shared",
+      "sourceRoot": "projects/ng-tri/shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ng-tri/shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-tri/shared/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ng-tri/shared/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ng-tri/shared/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
 	},
 	"cli": {
 		"analytics": false

@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [
-
-]
+import { routes } from './app-routes';
+import { AppComponent } from './app.component';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot(),
     RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
